@@ -27,14 +27,14 @@
 ######################################################
 
 # path to lua header files
-LUA_INC_PATH=/usr/include/lua5.1
+LUA_INC_PATH=/usr/local/include/lua5.1
 # path to lua library
-LUA_LIB_PATH=/usr/lib/lua5.1
+LUA_LIB_PATH=/usr/local/lib/lua/5.1
 
 # standard makefile variables
 CC=gcc
 CFLAGS=-c -Wall -fPIC -I${LUA_INC_PATH}
-LDFLAGS=-shared -L${LUA_LIB_PATH} -lpthread
+LDFLAGS=-shared -L${LUA_LIB_PATH} -lpthread -llua
 SOURCES=sched.c list.c luaproc.c channel.c
 OBJECTS=${SOURCES:.c=.o}
 LIB=luaproc.so
